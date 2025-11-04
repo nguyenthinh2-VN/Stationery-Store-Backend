@@ -98,10 +98,3 @@ UseCase -> Repository Interface <- RepositoryImpl (DB)
 
 ---
 
-## 🚀 Nếu cần, mình có thể hỗ trợ thêm:
-
-* Viết **Sequence Diagram** cho Use Case
-* Thêm **Swagger API Docs**
-* Tối ưu Dependency Injection
-
-
