@@ -4,6 +4,7 @@ import com.yuki.tkxdpm_k17_06.Adapter.ListProductAdapter.InputBoundary;
 import com.yuki.tkxdpm_k17_06.Control.ListProduct.ListProductControl;
 import com.yuki.tkxdpm_k17_06.Infrastructure.ListProductRepository;
 import com.yuki.tkxdpm_k17_06.Presenter.ListProductPresent;
+import com.yuki.tkxdpm_k17_06.Presenter.ListProductViewModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,8 +12,13 @@ import org.springframework.context.annotation.Configuration;
 public class ListProductConfig {
 
     @Bean
-    public ListProductPresent listProductPresent() {
-        return new ListProductPresent();
+    public ListProductViewModelMapper listProductViewModelMapper() {
+        return new ListProductViewModelMapper();
+    }
+
+    @Bean
+    public ListProductPresent listProductPresent(ListProductViewModelMapper mapper) {
+        return new ListProductPresent(mapper);
     }
 
     @Bean

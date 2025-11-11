@@ -14,12 +14,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ListProductViewModel {
-    private Long id;
+    private String id;
     private String name;
-    private Double price;
+    private String price;
     private String imageUrl;
     private String description;
-    private Boolean isSuccess;
+    private String isSuccess;
     private String message;
     private String result;
 }
