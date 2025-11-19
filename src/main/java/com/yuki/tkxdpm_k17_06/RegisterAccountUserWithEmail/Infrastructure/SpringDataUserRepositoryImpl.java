@@ -1,9 +1,11 @@
 package com.yuki.tkxdpm_k17_06.RegisterAccountUserWithEmail.Infrastructure;
 
+import com.yuki.tkxdpm_k17_06.UserAccountEntity;
 import com.yuki.tkxdpm_k17_06.RegisterAccountUserWithEmail.Entity.UserAccount;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
+@Repository("springDataUserRepositoryImplRegister")
 public class SpringDataUserRepositoryImpl implements UserRepository{
     private final SpringDataUserJpaRepository jpa;
 
@@ -16,6 +18,7 @@ public class SpringDataUserRepositoryImpl implements UserRepository{
         return jpa.existsByEmail(email);
     }
 
+
     @Override
     public void save(UserAccount account) {
         UserAccountEntity entity = new UserAccountEntity(
@@ -25,7 +28,7 @@ public class SpringDataUserRepositoryImpl implements UserRepository{
                 account.getPasswordHash()
         );
 
-        jpa.save(entity); 
+        jpa.save(entity);
     }
-}
 
+}

@@ -1,5 +1,6 @@
 package com.yuki.tkxdpm_k17_06.RegisterAccountUserWithEmail.Infrastructure;
 
+import com.yuki.tkxdpm_k17_06.UserAccountEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

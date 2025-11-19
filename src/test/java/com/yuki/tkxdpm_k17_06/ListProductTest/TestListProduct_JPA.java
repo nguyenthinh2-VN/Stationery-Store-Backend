@@ -1,7 +1,7 @@
 package com.yuki.tkxdpm_k17_06.ListProductTest;
 
-import com.yuki.tkxdpm_k17_06.Entity.Product;
-import com.yuki.tkxdpm_k17_06.Infrastructure.ListProductRepository;
+import com.yuki.tkxdpm_k17_06.ListProduct.Entity.Product;
+import com.yuki.tkxdpm_k17_06.ListProduct.Infrastructure.ListProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
