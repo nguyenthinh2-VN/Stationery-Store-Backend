@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("ID Token:", response.credential);
+
+            // Gửi ID TOKEN lên backend để login
+            fetch("http://localhost:8080/auth/login/google", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    googleToken: response.credential
+                })
+            })
+                .then(r => r.json())
+                .then(data => console.log("Server Response:", data));
+        }
+
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "940090065833-lucvnncjjmqosi7cn7d4p3bg93ap4br3.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+
+            google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"),
+                { theme: "outline", size: "large" }
+            );
+        }
+    </script>
+</head>
+<body>
+<h1>Test Google Login</h1>
+<div id="buttonDiv"></div>
+</body>
+</html>

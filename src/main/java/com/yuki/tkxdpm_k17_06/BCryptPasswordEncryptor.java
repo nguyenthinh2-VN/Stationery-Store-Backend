@@ -1,9 +1,9 @@
-package com.yuki.tkxdpm_k17_06.RegisterAccountUserWithEmail.Control;
+package com.yuki.tkxdpm_k17_06;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-@Component("registerPasswordEncryptor")
+@Component("mainPasswordEncryptor")
 public class BCryptPasswordEncryptor implements PasswordEncryptor {
     private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 

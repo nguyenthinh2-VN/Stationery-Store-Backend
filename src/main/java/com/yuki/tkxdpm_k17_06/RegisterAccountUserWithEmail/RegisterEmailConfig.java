@@ -7,6 +7,7 @@ import com.yuki.tkxdpm_k17_06.RegisterAccountUserWithEmail.Control.PasswordEncry
 import com.yuki.tkxdpm_k17_06.RegisterAccountUserWithEmail.Control.RegisterWithEmailControl;
 
 import com.yuki.tkxdpm_k17_06.RegisterAccountUserWithEmail.Infrastructure.UserRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,10 +17,9 @@ public class RegisterEmailConfig {
     @Bean
     public RegisterWithEmailInputBoundary registerWithEmailInteractor(
             UserRepository repository,
-            PasswordEncryptor encryptor,
+            @Qualifier("registerPasswordEncryptor") PasswordEncryptor encryptor,
             EmailRegistrationPolicy emailPolicy,
-            RegisterWithEmailOutputBoundary presenter
-    ) {
+            RegisterWithEmailOutputBoundary presenter) {
         return new RegisterWithEmailControl(repository, encryptor, presenter, emailPolicy);
     }
 }

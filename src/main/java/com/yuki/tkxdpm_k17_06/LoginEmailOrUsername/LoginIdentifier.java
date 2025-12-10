@@ -1,5 +1,0 @@
-package com.yuki.tkxdpm_k17_06.LoginEmailOrUsername;
-
-
-public record LoginIdentifier(LoginIdentifierType type, String value) {
-}

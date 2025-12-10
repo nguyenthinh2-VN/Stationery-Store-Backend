@@ -1,7 +1,7 @@
 package com.yuki.tkxdpm_k17_06.UserAccountTesting.Login;
 
-import com.yuki.tkxdpm_k17_06.LoginEmailOrUsername.Infrastructure.BCryptPasswordEncryptor;
-import com.yuki.tkxdpm_k17_06.LoginEmailOrUsername.Usecase.PasswordEncryptor;
+import com.yuki.tkxdpm_k17_06.LoginEmailOrUsernameAndGoogle.Infrastructure.BCryptPasswordEncryptor;
+import com.yuki.tkxdpm_k17_06.LoginEmailOrUsernameAndGoogle.Usecase.PasswordEncryptor;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

@@ -21,7 +21,6 @@ public class UserAccountEntity {
 
     private String role = "USER";
 
-
     public UserAccountEntity(Long id, String name, String username, String email, String passwordHash, String role) {
         this.id = id;
         this.name = name;
@@ -66,5 +65,21 @@ public class UserAccountEntity {
     public String getRole() {
         return role;
     }
-}
 
+    // Setters for UPDATE operations
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}

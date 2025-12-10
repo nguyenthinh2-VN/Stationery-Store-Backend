@@ -1,16 +1,16 @@
-package com.yuki.tkxdpm_k17_06.RegisterAccountUserWithEmail.Control;
+package com.yuki.tkxdpm_k17_06.LoginEmailOrUsernameAndGoogle.Infrastructure;
 
+import com.yuki.tkxdpm_k17_06.LoginEmailOrUsernameAndGoogle.Usecase.PasswordEncryptor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Component;
 
-@Component("registerPasswordEncryptor")
 public class BCryptPasswordEncryptor implements PasswordEncryptor {
     private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     @Override
-    public String hash(String rawPassword) {
-        return encoder.encode(rawPassword);
+    public String hash(String raw) {
+        return encoder.encode(raw);
     }
+
 
     @Override
     public boolean verify(String rawPassword, String hashed) {

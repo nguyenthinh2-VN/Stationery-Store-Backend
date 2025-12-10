@@ -27,6 +27,15 @@ public class UserAccount extends Account {
     }
 
 
+    public UserAccount(String email, String name) {
+        super(null, name, null, email, null);
+        // id = null (chưa lưu DB)
+        // username = null (chưa có)
+        // passwordHash = null (Google không cung cấp)
+
+        this.role = Role.USER;
+    }
+
     public void encryptPassword(PasswordEncryptor encryptor) {
         this.passwordHash = encryptor.hash(this.passwordHash);
         //this.passwordHash = this.passwordHash; //-----(Testing)
@@ -35,5 +44,16 @@ public class UserAccount extends Account {
     @Override
     public Role getRole() {
         return Role.USER;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void updatePassword(String newHash) {
+        this.passwordHash = newHash;
     }
 }
